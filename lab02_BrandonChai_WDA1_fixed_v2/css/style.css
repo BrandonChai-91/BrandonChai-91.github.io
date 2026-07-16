@@ -1,0 +1,255 @@
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+	margin: 0;
+	color: darkslategray;
+	background: whitesmoke;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+a {
+	color: steelblue;
+	font-weight: 700;
+}
+
+a:hover,
+{
+	color: saddlebrown;	
+}
+
+.site-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	padding: 18px 6%;
+	background: white;
+	border-bottom: 3px solid goldenrod;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.logo {
+	color: darkblue;
+	font-size: 1.35rem;
+	text-decoration: none;
+}
+
+.nav-list {
+	display: flex;
+	gap: 10px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav-list a {
+	display: block;
+	padding: 8px 12px;
+	color: darkblue;
+	text-decoration: none;
+	border-radius: 6px;
+}
+
+
+.nav-list .active {
+	color: white;
+	background: steelblue;
+}
+
+main {
+	width: min(1120px, 88%);
+	margin: 0 auto;
+}
+
+.sub-main,
+.page-title,
+.two-column,
+.content-grid,
+.info-band,
+.table-section {
+	margin: 38px 0;
+}
+
+.sub-main {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	align-items: center;
+	gap: 32px;
+}
+
+.sub-main h1,
+.page-title h1 {
+	margin: 0 0 12px;
+	color: darkblue;
+	font-size: 3rem;
+	line-height: 1.15;
+}
+
+.sub-main p,
+.page-title p {
+	max-width: 680px;
+}
+
+.eyebrow {
+	margin: 0 0 8px;
+	color: saddlebrown;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.button {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 10px 16px;
+	color: white;
+	background: steelblue;
+	border-radius: 6px;
+	text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+	color: white;
+	background: blue;
+}
+
+.page-title {
+	padding: 36px;
+	background-color: white;
+	border: 1px solid gainsboro;
+	border-radius: 8px;
+}
+
+.content-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 18px;
+}
+
+.content-grid article,
+.info-band,
+.table-section {
+	padding: 24px;
+	background: white;
+	border: 1px solid gainsboro;
+	border-radius: 8px;
+}
+
+.content-grid img {
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	margin-bottom: 14px;
+}
+
+h2 {
+	margin-top: 0;
+	color: midnightblue;
+}
+
+.two-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	gap: 28px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+}
+
+th,
+td {
+	padding: 12px;
+	border: 1px solid darkgray;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	color: white;
+	background: midnightblue;
+}	
+
+#reading {
+	grid-column: 1 / -1;
+}
+
+#reading img {
+	width: min(100%, 582px);
+	object-fit: contain;
+	background: linen;
+}
+
+/* Tablet layout: 769px to 1279px. */
+@media screen and (max-width: 1279px) {
+	.site-header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.sub-main,
+	.two-column {
+		grid-template-columns: 1fr;
+	}
+
+	.content-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Mobile layout: 768px and below. */
+@media screen and (max-width: 768px) {
+	body {
+		font-size: 15px;
+	}
+	
+	main {
+		width: min(94%, 680px);
+	}
+
+	.nav-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 100%;
+	}
+	
+	.nav-list a {
+		text-align: center;
+	}
+
+	.sub-main h1,
+	.page-title h1 {
+		font-size: 2.1rem;
+	}
+	
+    .content-grid {
+		grid-template-columns: 1fr;
+	}
+	
+	.content-grid article,
+	.info-band,
+	.table-section {
+	padding: 18px;
+	}
+	
+    table {font-size: 0.92rem;}
+	
+	th,
+    td {padding: 8px;}
+}
