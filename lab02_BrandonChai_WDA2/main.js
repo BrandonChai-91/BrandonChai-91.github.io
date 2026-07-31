@@ -1,4 +1,4 @@
-// page management//
+/* page management */
 const allPages = document.querySelectorAll(".page");
 const allNavButtons = document.querySelectorAll(".nav-button");
 const homeNav = document.querySelector("#homeNav");
@@ -139,7 +139,7 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-// -------------------- BENEFIT EXPLORER --------------------
+/*benefit explorer*/
 const benefit1 = document.querySelector("#benefit1");
 const benefit2 = document.querySelector("#benefit2");
 const benefit3 = document.querySelector("#benefit3");
@@ -223,7 +223,7 @@ benefit4.addEventListener("click", function () {
     showBenefit(3, benefit4);
 });
 
-// -------------------- SINGAPORE REGULATIONS --------------------
+/* singapore regulations*/
 const rule1 = document.querySelector("#rule1");
 const rule2 = document.querySelector("#rule2");
 const rule3 = document.querySelector("#rule3");
@@ -291,7 +291,7 @@ rule4.addEventListener("click", function () {
     showRegulation(3, rule4);
 });
 
-// -------------------- BASIC KNOWLEDGE QUIZ --------------------
+/* quiz*/
 const quizSubmitButton = document.querySelector("#quizSubmitButton");
 const quizResetButton = document.querySelector("#quizResetButton");
 const quizResult = document.querySelector("#quizResult");
@@ -358,7 +358,7 @@ function GetRandom(min, max) {
     return Math.round(Math.random() * (max - min)) + min;
 }
 
-// -------------------- RETURN RIGHT MINI-GAME --------------------
+/*minigame*/
 const miniSetup = document.querySelector("#miniSetup");
 const miniStartButton = document.querySelector("#miniStartButton");
 const miniGameArea = document.querySelector("#miniGameArea");
