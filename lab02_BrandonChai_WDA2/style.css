@@ -191,20 +191,20 @@ p {
 }
 
 /* home page */
-.hero {
+.submain {
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     gap: 50px;
 }
 
-.hero-lead {
+.submain-lead {
     max-width: 680px;
     color: slategray;
     font-size: 19px;
 }
 
-.hero-actions {
+.submain-actions {
     display: flex;
     align-items: center;
     gap: 18px;
@@ -266,7 +266,7 @@ p {
     font-size: 13px;
 }
 
-.hero-visual {
+.submain-visual {
     position: relative;
     display: flex;
     align-items: center;
@@ -304,7 +304,7 @@ p {
     background-position: -540px 0;
 }
 
-.hero-can {
+.submain-can {
     position: relative;
     z-index: 2;
     animation: canFloat 3s infinite alternate;
@@ -1134,7 +1134,7 @@ p {
         padding: 42px 0;
     }
 
-    .hero,
+    .submain,
     .page-heading,
     .ingredient-layout,
     .label-lab,
@@ -1143,13 +1143,13 @@ p {
         gap: 28px;
     }
 
-    .hero-visual {
+    .submain-visual {
         order: -1;
         min-height: 370px;
         box-shadow: 7px 7px 0 darkslategray;
     }
 
-    .hero-actions {
+    .submain-actions {
         align-items: flex-start;
         flex-direction: column;
     }
