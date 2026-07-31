@@ -1,0 +1,1250 @@
+/* Local font stored inside the assignment folder. */
+@font-face {
+    font-family: CanSans;
+    src: url("fonts/can-sans.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: floralwhite;
+    color: darkslategray;
+    font-family: CanSans, Arial, sans-serif;
+}
+
+button,
+input {
+    font-family: CanSans, Arial, sans-serif;
+}
+
+button {
+    color: darkslategray;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 72px;
+    line-height: 1;
+}
+
+h2 {
+    line-height: 1.2;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.app-shell {
+    min-height: 800px;
+}
+
+/* -------------------- HEADER AND NAVIGATION -------------------- */
+.site-header {
+    display: grid;
+    grid-template-columns: 190px auto 100px;
+    align-items: center;
+    gap: 20px;
+    min-height: 82px;
+    padding: 14px 60px;
+    background-color: floralwhite;
+    border-bottom: 1px solid lightsteelblue;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: white;
+    background-color: tomato;
+    border: 3px solid darkslategray;
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 darkslategray;
+}
+
+.main-nav {
+    justify-self: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 5px;
+    margin: 0;
+    padding: 5px;
+    background-color: aliceblue;
+    border-radius: 30px;
+    list-style-type: none;
+}
+
+.nav-button {
+    min-height: 44px;
+    padding: 9px 16px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+}
+
+.nav-button.active {
+    color: white;
+    background-color: darkslategray;
+}
+
+.game-nav {
+    background-color: gold;
+}
+
+.game-nav.active {
+    background-color: darkslategray;
+}
+
+.sound-button,
+.menu-button {
+    min-height: 44px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid darkslategray;
+    border-radius: 24px;
+    box-shadow: 3px 3px 0 darkslategray;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sound-button:hover,
+.menu-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 darkslategray;
+}
+
+.sound-button.muted {
+    color: slategray;
+    box-shadow: none;
+}
+
+.menu-button {
+    display: none;
+}
+
+/* -------------------- PAGE MANAGEMENT -------------------- */
+.page {
+    display: none;
+    width: auto;
+    max-width: 1180px;
+    min-height: 650px;
+    margin: 0 auto;
+    padding: 65px 0;
+}
+
+.page-enter {
+    animation: pageEnter 0.5s;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    color: steelblue;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* -------------------- HOME PAGE -------------------- */
+.hero {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-lead {
+    max-width: 680px;
+    color: slategray;
+    font-size: 19px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.primary-button,
+.text-button,
+.reset-button {
+    min-height: 48px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-button {
+    padding: 13px 24px;
+    color: white;
+    background-color: tomato;
+    border: 2px solid darkslategray;
+    box-shadow: 5px 5px 0 darkslategray;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-button:hover {
+    background-color: tomato;
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 darkslategray;
+}
+
+.text-button {
+    padding: 12px 4px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid darkslategray;
+    border-radius: 0;
+}
+
+.quick-facts {
+    display: flex;
+    gap: 28px;
+    margin-top: 38px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.quick-facts li {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-facts strong {
+    color: tomato;
+    font-size: 26px;
+}
+
+.quick-facts span {
+    color: slategray;
+    font-size: 13px;
+}
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 480px;
+    overflow: hidden;
+    background-color: lightskyblue;
+    border: 3px solid darkslategray;
+    border-radius: 35px;
+    box-shadow: 12px 12px 0 darkslategray;
+}
+
+/* One local image file supplies four CSS sprites. */
+.can-sprite {
+    width: 180px;
+    height: 240px;
+    background-image: url("images/can-sprites.png");
+    background-repeat: no-repeat;
+    background-size: 720px 240px;
+}
+
+.sprite-water {
+    background-position: 0 0;
+}
+
+.sprite-fizz {
+    background-position: -180px 0;
+}
+
+.sprite-flavour {
+    background-position: -360px 0;
+}
+
+.sprite-recycle {
+    background-position: -540px 0;
+}
+
+.hero-can {
+    position: relative;
+    z-index: 2;
+    animation: canFloat 3s infinite alternate;
+}
+
+@keyframes canFloat {
+    from {
+        transform: translateY(8px) rotate(-5deg);
+    }
+
+    to {
+        transform: translateY(-14px) rotate(4deg);
+    }
+}
+
+.bubble {
+    position: absolute;
+    border: 3px solid slategray;
+    border-radius: 999px;
+    animation: bubbleMove 4s infinite alternate;
+}
+
+.bubble-one {
+    left: 88px;
+    bottom: 63px;
+    width: 44px;
+    height: 44px;
+}
+
+.bubble-two {
+    top: 67px;
+    right: 98px;
+    width: 72px;
+    height: 72px;
+}
+
+.bubble-three {
+    top: 100px;
+    left: 88px;
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes bubbleMove {
+    from {
+        transform: translateY(12px);
+    }
+
+    to {
+        transform: translateY(-18px);
+    }
+}
+
+.visual-note {
+    position: absolute;
+    z-index: 3;
+    right: 24px;
+    bottom: 24px;
+    margin: 0;
+    padding: 10px 14px;
+    background-color: white;
+    border: 2px solid darkslategray;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 darkslategray;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.lesson-strip {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    margin-top: 75px;
+    overflow: hidden;
+    background-color: white;
+    border: 2px solid darkslategray;
+    border-radius: 25px;
+    box-shadow: 0 14px 30px lightsteelblue;
+}
+
+.lesson-strip article {
+    min-height: 215px;
+    padding: 30px;
+}
+
+.lesson-strip article + article {
+    border-left: 2px solid darkslategray;
+}
+
+.step-number {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: tomato;
+    font-weight: bold;
+}
+
+.lesson-strip h2 {
+    margin-bottom: 10px;
+}
+
+.lesson-strip p {
+    margin: 0;
+    color: slategray;
+}
+
+.desktop-qr {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 450px;
+    margin-top: 42px;
+    margin-left: auto;
+    padding: 16px;
+    color: white;
+    background-color: darkslategray;
+    border-radius: 18px;
+}
+
+.desktop-qr img {
+    width: 108px;
+    height: 108px;
+    padding: 6px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.desktop-qr p {
+    margin: 5px 0 0;
+    color: lightgray;
+    font-size: 13px;
+}
+
+/* -------------------- SHARED PAGE HEADING -------------------- */
+.page-heading {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: end;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.page-heading h1 {
+    margin: 0;
+    font-size: 64px;
+}
+
+.page-heading > p {
+    margin: 0;
+    color: slategray;
+}
+
+/* -------------------- BENEFITS PAGE -------------------- */
+.ingredient-layout {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 35px;
+}
+
+.ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 16px;
+}
+
+.ingredient-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 190px;
+    padding: 22px;
+    text-align: left;
+    background-color: white;
+    border: 2px solid darkslategray;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.ingredient-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 darkslategray;
+}
+
+.ingredient-card.selected {
+    background-color: aliceblue;
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 darkslategray;
+}
+
+.ingredient-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 22px;
+    border: 2px solid darkslategray;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.water-icon {
+    background-color: lightskyblue;
+}
+
+.sweet-icon {
+    background-color: gold;
+}
+
+.acid-icon {
+    background-color: lightpink;
+}
+
+.fizz-icon {
+    background-color: aquamarine;
+}
+
+.ingredient-card strong {
+    font-size: 17px;
+}
+
+.ingredient-card small {
+    margin-top: 4px;
+    color: slategray;
+}
+
+.detail-panel {
+    position: relative;
+    min-height: 395px;
+    padding: 50px;
+    overflow: hidden;
+    color: white;
+    background-color: darkslategray;
+    border-radius: 25px;
+    box-shadow: 0 14px 30px lightsteelblue;
+}
+
+.detail-label {
+    margin-bottom: 10px;
+    color: gold;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.detail-panel h2 {
+    position: relative;
+    z-index: 2;
+    max-width: 430px;
+    margin-bottom: 14px;
+    font-size: 40px;
+}
+
+.detail-panel > p {
+    position: relative;
+    z-index: 2;
+    max-width: 430px;
+    color: lightgray;
+}
+
+.detail-can {
+    position: absolute;
+    right: -38px;
+    bottom: -45px;
+    opacity: 0.3;
+    transform: rotate(14deg) scale(1.3);
+}
+
+.detail-panel.flash .detail-can {
+    animation: detailPop 0.5s;
+}
+
+@keyframes detailPop {
+    from {
+        transform: rotate(14deg) scale(1.3);
+    }
+
+    to {
+        transform: rotate(2deg) scale(1.5);
+    }
+}
+
+.science-note {
+    position: relative;
+    z-index: 2;
+    max-width: 430px;
+    margin-top: 28px;
+    padding: 16px;
+    color: darkslategray;
+    background-color: gold;
+    border-radius: 12px;
+}
+
+.science-note p {
+    margin: 5px 0 0;
+    color: darkslategray;
+    line-height: 1.4;
+}
+
+.label-lab {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
+    padding: 40px;
+    background-color: honeydew;
+    border: 2px solid darkslategray;
+    border-radius: 25px;
+}
+
+.label-lab p {
+    margin-bottom: 0;
+    color: slategray;
+}
+
+.sample-label {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    border: 2px solid darkslategray;
+    border-radius: 18px;
+    list-style-type: none;
+}
+
+.sample-label li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 16px;
+    border-bottom: 1px solid lightgray;
+}
+
+.sample-label span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: gold;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+/* -------------------- REGULATIONS PAGE -------------------- */
+.journey-layout {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 35px;
+}
+
+.anatomy-card,
+.timeline-card {
+    background-color: white;
+    border: 2px solid darkslategray;
+    border-radius: 25px;
+    box-shadow: 0 14px 30px lightsteelblue;
+}
+
+.regulation-board {
+    padding: 38px;
+    background-color: aliceblue;
+}
+
+.regulation-board h2 {
+    margin-bottom: 26px;
+    font-size: 38px;
+}
+
+.regulation-board > p {
+    margin-top: 28px;
+    color: slategray;
+}
+
+.regulation-board .eyebrow {
+    margin-top: 0;
+    color: steelblue;
+}
+
+.nutri-scale {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    overflow: hidden;
+    border: 2px solid darkslategray;
+    border-radius: 14px;
+}
+
+.nutri-scale span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 72px;
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.grade-a {
+    background-color: seagreen;
+}
+
+.grade-b {
+    background-color: olivedrab;
+}
+
+.grade-c {
+    background-color: goldenrod;
+}
+
+.grade-d {
+    background-color: firebrick;
+}
+
+.deposit-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 190px;
+    margin-top: 24px;
+    padding: 12px 18px;
+    color: white;
+    background-color: darkslategray;
+    border: 3px solid tomato;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0 tomato;
+}
+
+.deposit-badge strong {
+    font-size: 27px;
+}
+
+.deposit-badge span {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.timeline-card {
+    padding: 40px;
+}
+
+.journey-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+}
+
+.journey-step {
+    min-height: 76px;
+    padding: 8px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.journey-step:hover {
+    transform: translateY(-3px);
+}
+
+.journey-step span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin: 0 auto 7px;
+    color: white;
+    background-color: slategray;
+    border-radius: 999px;
+}
+
+.journey-step.active {
+    background-color: aliceblue;
+}
+
+.journey-step.active span {
+    background-color: tomato;
+}
+
+.journey-detail {
+    margin-top: 34px;
+    padding: 30px;
+    color: white;
+    background-color: darkslategray;
+    border-radius: 18px;
+}
+
+.journey-detail > p {
+    color: lightgray;
+}
+
+.journey-detail > p:first-child {
+    margin-bottom: 8px;
+    color: gold;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.journey-detail h2 {
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+
+.journey-detail .action-tip {
+    margin: 20px 0 0;
+    padding-top: 16px;
+    color: white;
+    border-top: 1px solid slategray;
+}
+
+.recycle-callout {
+    display: grid;
+    grid-template-columns: 180px auto;
+    align-items: center;
+    gap: 32px;
+    margin-top: 36px;
+    padding: 30px 55px;
+    overflow: hidden;
+    background-color: gold;
+    border: 2px solid darkslategray;
+    border-radius: 25px;
+}
+
+.recycle-callout h2 {
+    margin-bottom: 8px;
+    font-size: 45px;
+}
+
+.recycle-callout p {
+    margin-bottom: 0;
+}
+
+.recycle-can {
+    animation: recycleMove 4s infinite alternate;
+}
+
+@keyframes recycleMove {
+    from {
+        transform: rotate(-5deg);
+    }
+
+    to {
+        transform: rotate(6deg) translateY(-8px);
+    }
+}
+
+.source-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 18px 22px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+}
+
+.source-links p {
+    margin: 0 8px 0 0;
+}
+
+.source-links a {
+    padding: 8px 12px;
+    color: darkslategray;
+    background-color: aliceblue;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.source-links a:hover {
+    background-color: gold;
+}
+
+/* -------------------- BASIC KNOWLEDGE QUIZ -------------------- */
+.quiz-shell {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border: 3px solid darkslategray;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0 darkslategray;
+}
+
+.quiz-question {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: aliceblue;
+    border: 2px solid darkslategray;
+    border-radius: 12px;
+}
+
+.quiz-question h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.quiz-question label {
+    display: block;
+    padding: 7px 0;
+    cursor: pointer;
+}
+
+.quiz-question input {
+    margin-right: 8px;
+}
+
+.quiz-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.quiz-result {
+    margin-bottom: 0;
+    padding: 16px;
+    color: darkslategray;
+    background-color: gold;
+    border: 2px solid darkslategray;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.score-row {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    overflow: hidden;
+    background-color: aliceblue;
+    border: 2px solid darkslategray;
+    border-radius: 14px;
+}
+
+.score-row > div {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    border-right: 1px solid lightsteelblue;
+}
+
+.score-row span {
+    color: slategray;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.score-row strong {
+    margin-top: 3px;
+    font-size: 18px;
+}
+
+.feedback {
+    min-height: 26px;
+    margin: 17px 0 0;
+    color: goldenrod;
+    font-weight: bold;
+}
+
+.result-panel {
+    padding: 20px;
+    text-align: center;
+}
+
+.result-can {
+    margin: 0 auto;
+    transform: scale(0.7);
+}
+
+.result-panel h2 {
+    margin-bottom: 10px;
+    font-size: 48px;
+}
+
+.result-panel p {
+    color: slategray;
+}
+
+.reset-button {
+    display: block;
+    margin: 24px 0 0 auto;
+    padding: 9px 14px;
+    color: slategray;
+    background-color: transparent;
+    border: 1px solid lightgray;
+}
+
+/* -------------------- RETURN RIGHT MINI-GAME -------------------- */
+.mini-game-shell {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border: 3px solid darkslategray;
+    border-radius: 25px;
+    box-shadow: 12px 12px 0 darkslategray;
+}
+
+.mini-setup {
+    padding: 28px;
+    background-color: aliceblue;
+    border: 2px solid darkslategray;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.mini-setup p {
+    max-width: 680px;
+    margin: 0 auto 20px;
+    line-height: 1.7;
+}
+
+#miniGameArea,
+#miniResult {
+    display: none;
+}
+
+.mini-game-area .score-row {
+    grid-template-columns: repeat(3, auto);
+}
+
+.mini-board {
+    position: relative;
+    height: 430px;
+    margin-top: 24px;
+    overflow: hidden;
+    background-color: lightskyblue;
+    border: 3px solid darkslategray;
+    border-radius: 18px;
+}
+
+.catch-can {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 145px;
+    padding: 14px;
+    color: darkslategray;
+    border: 4px solid darkslategray;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: left 0.25s, top 0.25s, background-color 0.25s;
+}
+
+.deposit-can {
+    background-color: mediumaquamarine;
+}
+
+.no-deposit-can {
+    background-color: lightsalmon;
+}
+
+/* -------------------- MOBILE LAYOUT: 800PX BREAKPOINT -------------------- */
+@media (max-width: 800px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    .site-header {
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        padding: 12px 18px;
+    }
+
+    .brand {
+        font-size: 16px;
+    }
+
+    .brand-mark {
+        width: 38px;
+        height: 38px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 70px;
+        right: 16px;
+        left: 16px;
+        z-index: 10;
+        display: none;
+        padding: 12px;
+        background-color: white;
+        border: 2px solid darkslategray;
+        border-radius: 16px;
+        box-shadow: 7px 7px 0 darkslategray;
+    }
+
+    .main-nav.menuShow {
+        display: block;
+    }
+
+    .main-nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        padding: 0;
+        background-color: white;
+    }
+
+    .nav-button {
+        width: auto;
+    }
+
+    .sound-button {
+        padding: 8px;
+    }
+
+    .page {
+        width: auto;
+        min-height: 600px;
+        padding: 42px 0;
+    }
+
+    .hero,
+    .page-heading,
+    .ingredient-layout,
+    .label-lab,
+    .journey-layout {
+        grid-template-columns: auto;
+        gap: 28px;
+    }
+
+    .hero-visual {
+        order: -1;
+        min-height: 370px;
+        box-shadow: 7px 7px 0 darkslategray;
+    }
+
+    .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quick-facts {
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .lesson-strip {
+        grid-template-columns: auto;
+        margin-top: 50px;
+    }
+
+    .lesson-strip article {
+        min-height: 170px;
+    }
+
+    .lesson-strip article + article {
+        border-top: 2px solid darkslategray;
+        border-left: 0;
+    }
+
+    .desktop-qr {
+        display: none;
+    }
+
+    .page-heading {
+        align-items: start;
+        margin-bottom: 34px;
+    }
+
+    .page-heading h1 {
+        font-size: 45px;
+    }
+
+    .detail-panel {
+        min-height: 410px;
+        padding: 35px;
+    }
+
+    .label-lab {
+        padding: 28px;
+    }
+
+    .journey-buttons {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .timeline-card {
+        padding: 25px;
+    }
+
+    .recycle-callout {
+        grid-template-columns: auto;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .recycle-can {
+        margin: 0 auto;
+    }
+
+    .source-links {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quiz-shell {
+        padding: 20px;
+        box-shadow: 7px 7px 0 darkslategray;
+    }
+
+    .mini-game-shell {
+        padding: 20px;
+        box-shadow: 7px 7px 0 darkslategray;
+    }
+
+    .score-row {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .quiz-buttons {
+        flex-direction: column;
+    }
+
+    .mini-board {
+        height: 360px;
+    }
+
+    .catch-can {
+        width: 88px;
+        height: 120px;
+        font-size: 12px;
+    }
+
+}
