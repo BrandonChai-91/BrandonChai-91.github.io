@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive educational web app about canned soft drinks, their benefits and Singapore regulations.">
+    <title>CanVerse | Canned Soft Drinks in Singapore</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="app-shell">
+        <!-- Header and single-page navigation -->
+        <header class="site-header">
+            <button id="homeButton" class="brand" type="button">
+                <span class="brand-mark">C</span>
+                <span>CanVerse</span>
+            </button>
+
+            <button id="menuButton" class="menu-button" type="button">
+                <span id="menuLabel">☰ Menu</span>
+            </button>
+
+            <div id="mainNav" class="main-nav">
+                <ul id="navList">
+                    <li><button id="homeNav" class="nav-button active" type="button">Home</button></li>
+                    <li><button id="benefitsNav" class="nav-button" type="button">Benefits</button></li>
+                    <li><button id="regulationsNav" class="nav-button" type="button">Singapore Rules</button></li>
+                    <li><button id="quizNav" class="nav-button" type="button">Quiz</button></li>
+                    <li><button id="gameNav" class="nav-button game-nav" type="button">Mini-Game</button></li>
+                </ul>
+            </div>
+
+            <button id="soundButton" class="sound-button" type="button">
+                Sound: On
+            </button>
+        </header>
+
+        <!-- All app pages are stored in one HTML file and shown by JavaScript -->
+        <main id="pageContainer">
+            <section id="home" class="page active">
+                <div class="hero">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Soft drinks. Smart choices.</p>
+                        <h1 id="homeTitle">How have canned soft drinks changed daily life?</h1>
+                        <p class="hero-lead">
+                            Explore the benefits brought by canned soft drinks and learn how
+                            Singapore regulates their labels, advertising and containers.
+                        </p>
+                        <div class="hero-actions">
+                            <button id="benefitsStart" class="primary-button" type="button">
+                                Start exploring
+                            </button>
+                            <button id="gameStart" class="text-button" type="button">
+                                Jump to the mini-game <span>→</span>
+                            </button>
+                        </div>
+                        <ul class="quick-facts">
+                            <li><strong>4</strong><span>key benefits</span></li>
+                            <li><strong>A–D</strong><span>Nutri-Grades</span></li>
+                            <li><strong>10¢</strong><span>return deposit</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="hero-visual">
+                        <span class="bubble bubble-one"></span>
+                        <span class="bubble bubble-two"></span>
+                        <span class="bubble bubble-three"></span>
+                        <div class="can-sprite sprite-fizz hero-can"></div>
+                        <p class="visual-note">Sealed, portable and easy to store.</p>
+                    </div>
+                </div>
+
+                <div class="lesson-strip">
+                    <article>
+                        <span class="step-number">01</span>
+                        <h2>Discover the benefits</h2>
+                        <p>See how cans improved protection, portability, convenience and recycling.</p>
+                    </article>
+                    <article>
+                        <span class="step-number">02</span>
+                        <h2>Know Singapore’s rules</h2>
+                        <p>Explore Nutri-Grade, food labels, advertising limits and the return scheme.</p>
+                    </article>
+                    <article>
+                        <span class="step-number">03</span>
+                        <h2>Quiz and play</h2>
+                        <p>Check your knowledge in the quiz, then catch returnable cans in the mini-game.</p>
+                    </article>
+                </div>
+
+                <!-- Replace the placeholder URL and QR image after GitHub Pages is published -->
+                <aside class="desktop-qr">
+                    <img src="images/github-qr.png"
+                        alt="QR code for the future GitHub Pages version of CanVerse">
+                    <div>
+                        <strong>Open on your phone</strong>
+                        <p>QR placeholder: replace after publishing to GitHub Pages.</p>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="benefits" class="page">
+                <div class="page-heading">
+                    <div>
+                        <p class="eyebrow">Subtopic 1</p>
+                        <h1 id="benefitsTitle">Benefits canned soft drinks have brought</h1>
+                    </div>
+                    <p>
+                        The main benefits come from the can as a package. Select each benefit
+                        to see how it changed the storage, transport and use of soft drinks.
+                    </p>
+                </div>
+
+                <div class="ingredient-layout">
+                    <div id="benefitButtons" class="ingredient-grid">
+                        <button id="benefit1" class="ingredient-card selected" type="button">
+                            <span class="ingredient-icon water-icon">01</span>
+                            <strong>Protection</strong>
+                            <small>Sealed from light and air</small>
+                        </button>
+                        <button id="benefit2" class="ingredient-card" type="button">
+                            <span class="ingredient-icon sweet-icon">02</span>
+                            <strong>Portability</strong>
+                            <small>Light and stackable</small>
+                        </button>
+                        <button id="benefit3" class="ingredient-card" type="button">
+                            <span class="ingredient-icon acid-icon">03</span>
+                            <strong>Convenience</strong>
+                            <small>Ready when needed</small>
+                        </button>
+                        <button id="benefit4" class="ingredient-card" type="button">
+                            <span class="ingredient-icon fizz-icon">04</span>
+                            <strong>Recyclability</strong>
+                            <small>Metal can be recovered</small>
+                        </button>
+                    </div>
+
+                    <article id="benefitDetail" class="detail-panel">
+                        <p class="detail-label">Selected benefit</p>
+                        <div id="detailCan" class="can-sprite sprite-water detail-can"></div>
+                        <h2 id="benefitName">Protection: a strong seal</h2>
+                        <p id="benefitText">
+                            The sealed aluminium package blocks light and limits contact with air.
+                            It helps protect the drink during storage and transport.
+                        </p>
+                        <div class="science-note">
+                            <strong id="benefitNoteTitle">Why it matters</strong>
+                            <p id="benefitNoteText">A tough package reduces leaks and damage before the drink reaches the user.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="label-lab">
+                    <div>
+                        <p class="eyebrow">Balanced view</p>
+                        <h2>Packaging benefits are not health claims</h2>
+                        <p>
+                            Cans make soft drinks easier to protect, transport and recycle. However,
+                            different drinks contain different amounts of sugar, sweeteners or caffeine.
+                            The product label helps consumers make an informed choice.
+                        </p>
+                    </div>
+                    <ul class="sample-label">
+                        <li><span>1</span>Check the Nutri-Grade</li>
+                        <li><span>2</span>Read the ingredients</li>
+                        <li><span>3</span>Check the can size</li>
+                        <li><span>4</span>Return or recycle it</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="regulations" class="page">
+                <div class="page-heading">
+                    <div>
+                        <p class="eyebrow">Subtopic 2</p>
+                        <h1 id="regulationsTitle">Soft-drink regulations in Singapore</h1>
+                    </div>
+                    <p>
+                        Singapore’s rules help consumers understand what they are buying and
+                        encourage responsible handling of beverage containers.
+                    </p>
+                </div>
+
+                <div class="journey-layout">
+                    <div class="anatomy-card regulation-board">
+                        <p class="eyebrow">Singapore rule board</p>
+                        <h2>Look for these signs</h2>
+                        <div class="nutri-scale">
+                            <span class="grade-a">A</span>
+                            <span class="grade-b">B</span>
+                            <span class="grade-c">C</span>
+                            <span class="grade-d">D</span>
+                        </div>
+                        <div class="deposit-badge">
+                            <strong>10¢</strong>
+                            <span>Deposit Mark</span>
+                        </div>
+                        <p>
+                            Nutri-Grade communicates sugar and saturated-fat levels.
+                            The Deposit Mark identifies containers that qualify for a refund.
+                        </p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div id="regulationButtons" class="journey-buttons">
+                            <button id="rule1" class="journey-step active" type="button">
+                                <span>1</span>Nutri-Grade
+                            </button>
+                            <button id="rule2" class="journey-step" type="button">
+                                <span>2</span>Food label
+                            </button>
+                            <button id="rule3" class="journey-step" type="button">
+                                <span>3</span>Advertising
+                            </button>
+                            <button id="rule4" class="journey-step" type="button">
+                                <span>4</span>Return scheme
+                            </button>
+                        </div>
+                        <article id="regulationDetail" class="journey-detail">
+                            <p id="regulationKicker">Rule 1 · Nutrition information</p>
+                            <h2 id="regulationTitle">Nutri-Grade A to D</h2>
+                            <p id="regulationText">
+                                Prepacked soft drinks are graded A, B, C or D according to their
+                                sugar and saturated-fat content. Grade C and D drinks must show
+                                the Nutri-Grade mark on the front of the package.
+                            </p>
+                            <p class="action-tip" id="regulationTip">
+                                <strong>Remember:</strong> Showing the mark is optional for Grade A and B drinks.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="recycle-callout">
+                    <div class="can-sprite sprite-recycle recycle-can"></div>
+                    <div>
+                        <p class="eyebrow">Current in July 2026</p>
+                        <h2>Return the right can</h2>
+                        <p>
+                            During the transition period from 1 April to 30 September 2026, only
+                            eligible cans carrying the Deposit Mark include the 10-cent deposit.
+                            Keep the can empty, uncrushed and with its barcode visible before returning it.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="source-links">
+                    <p><strong>Official sources used:</strong></p>
+                    <a href="https://www.hpb.gov.sg/healthy-living/food-and-beverage/nutri-grade/">HPB
+                        Nutri-Grade</a>
+                    <a
+                        href="https://www.sfa.gov.sg/food-safety-tips/food-risk-concerns/understanding-food-nutrition-labels-before-purchase">SFA
+                        Food Labels</a>
+                    <a
+                        href="https://www.nea.gov.sg/our-services/waste-management/beverage-container-return-scheme/for-consumers">NEA
+                        Return Scheme</a>
+                </div>
+            </section>
+
+            <section id="quiz" class="page">
+                <div class="page-heading game-heading">
+                    <div>
+                        <p class="eyebrow">Knowledge quiz</p>
+                        <h1>CanVerse Quiz</h1>
+                    </div>
+                    <p>
+                        Select one answer for each question, then submit the quiz to see your score.
+                    </p>
+                </div>
+
+                <div class="quiz-shell">
+                    <div class="quiz-question">
+                        <h2>1. What benefit does a sealed can provide?</h2>
+                        <label><input id="q1a" type="radio" name="q1" value="Decoration" checked> Decoration</label>
+                        <label><input type="radio" name="q1" value="Protection"> Protection</label>
+                        <label><input type="radio" name="q1" value="Heating"> Heating</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h2>2. Which metal is commonly used for soft-drink cans?</h2>
+                        <label><input id="q2a" type="radio" name="q2" value="Steel" checked> Steel</label>
+                        <label><input type="radio" name="q2" value="Aluminium"> Aluminium</label>
+                        <label><input type="radio" name="q2" value="Gold"> Gold</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h2>3. Which nutrients are used for Nutri-Grade?</h2>
+                        <label><input id="q3a" type="radio" name="q3" value="Protein and fibre" checked> Protein and fibre</label>
+                        <label><input type="radio" name="q3" value="Salt and calcium"> Salt and calcium</label>
+                        <label><input type="radio" name="q3" value="Sugar and saturated fat"> Sugar and saturated fat</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h2>4. Which Nutri-Grade generally cannot be advertised?</h2>
+                        <label><input id="q4a" type="radio" name="q4" value="Grade A" checked> Grade A</label>
+                        <label><input type="radio" name="q4" value="Grade C"> Grade C</label>
+                        <label><input type="radio" name="q4" value="Grade D"> Grade D</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h2>5. What identifies a container that qualifies for the refund?</h2>
+                        <label><input id="q5a" type="radio" name="q5" value="Ingredient list" checked> Ingredient list</label>
+                        <label><input type="radio" name="q5" value="Deposit Mark"> Deposit Mark</label>
+                        <label><input type="radio" name="q5" value="Price label"> Price label</label>
+                    </div>
+
+                    <div class="quiz-buttons">
+                        <button id="quizSubmitButton" class="primary-button" type="button">Submit quiz</button>
+                        <button id="quizResetButton" class="reset-button" type="button">Reset quiz</button>
+                    </div>
+                    <p id="quizResult" class="quiz-result">Your score will appear here.</p>
+                </div>
+            </section>
+
+            <section id="game" class="page">
+                <div class="page-heading game-heading">
+                    <div>
+                        <p class="eyebrow">Mini-game</p>
+                        <h1>Return Right Rush</h1>
+                    </div>
+                    <p>
+                        Click cans carrying the Deposit Mark. Avoid cans marked No Deposit
+                        and collect as many correct cans as possible before time runs out.
+                    </p>
+                </div>
+
+                <div class="mini-game-shell">
+                    <div id="miniSetup" class="mini-setup">
+                        <p>
+                            A can will move to a new position every second. Read its mark before
+                            clicking it. A correct can gives one point and a wrong can removes one point.
+                        </p>
+                        <button id="miniStartButton" class="primary-button" type="button">
+                            Start mini-game
+                        </button>
+                    </div>
+
+                    <div id="miniGameArea" class="mini-game-area">
+                        <div class="score-row">
+                            <div><span>Time</span><strong id="miniTime">20</strong></div>
+                            <div><span>Score</span><strong id="miniScore">0</strong></div>
+                            <div><span>Correct cans</span><strong id="miniCaught">0</strong></div>
+                        </div>
+
+                        <div id="miniBoard" class="mini-board">
+                            <button id="catchCan" class="catch-can deposit-can" type="button">
+                                Deposit Mark
+                            </button>
+                        </div>
+
+                        <p id="miniFeedback" class="feedback">
+                            Click only cans with the Deposit Mark.
+                        </p>
+                    </div>
+
+                    <div id="miniResult" class="result-panel">
+                        <div class="can-sprite sprite-recycle result-can"></div>
+                        <p class="eyebrow">Mini-game complete</p>
+                        <h2 id="miniResultTitle">Return run finished!</h2>
+                        <p id="miniResultText"></p>
+                        <button id="miniRestartButton" class="primary-button" type="button">
+                            Play again
+                        </button>
+                    </div>
+
+                    <button id="miniResetButton" class="reset-button" type="button">
+                        Reset the mini-game
+                    </button>
+                </div>
+            </section>
+        </main>
+
+    </div>
+</body>
+</html>
