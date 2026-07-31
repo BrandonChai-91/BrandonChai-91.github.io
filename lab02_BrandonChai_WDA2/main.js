@@ -1,6 +1,4 @@
-/* CanVerse page management, learning interactions and mini-game. */
-
-// -------------------- PAGE MANAGEMENT --------------------
+// page management//
 const allPages = document.querySelectorAll(".page");
 const allNavButtons = document.querySelectorAll(".nav-button");
 const homeNav = document.querySelector("#homeNav");
