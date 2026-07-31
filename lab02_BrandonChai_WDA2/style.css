@@ -48,7 +48,7 @@ p {
     min-height: 800px;
 }
 
-/* header and navigation*/
+/* header navigation */
 .site-header {
     display: grid;
     grid-template-columns: 190px auto 100px;
@@ -155,7 +155,7 @@ p {
     display: none;
 }
 
-/* page management */
+/* page management*/
 .page {
     display: none;
     width: auto;
@@ -436,7 +436,7 @@ p {
     font-size: 13px;
 }
 
-/* shared page heading */
+/* page heading */
 .page-heading {
     display: grid;
     grid-template-columns: auto auto;
@@ -455,7 +455,7 @@ p {
     color: slategray;
 }
 
-/* benefits page */
+/*benefits page */
 .ingredient-layout {
     display: grid;
     grid-template-columns: auto auto;
@@ -651,7 +651,7 @@ p {
     font-weight: bold;
 }
 
-/* regulations page*/
+/*regulations page */
 .journey-layout {
     display: grid;
     grid-template-columns: auto auto;
@@ -1001,7 +1001,7 @@ p {
     border: 1px solid lightgray;
 }
 
-/* minigame */
+/* minigame  */
 .mini-game-shell {
     max-width: 980px;
     margin: 0 auto;
@@ -1070,7 +1070,7 @@ p {
     background-color: lightsalmon;
 }
 
-/* mobile layout */
+/*mobile */
 @media (max-width: 800px) {
     h1 {
         font-size: 45px;
