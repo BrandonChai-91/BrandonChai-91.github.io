@@ -1,4 +1,3 @@
-/* Local font stored inside the assignment folder. */
 @font-face {
     font-family: CanSans;
     src: url("fonts/can-sans.ttf");
@@ -49,7 +48,7 @@ p {
     min-height: 800px;
 }
 
-/* -------------------- HEADER AND NAVIGATION -------------------- */
+/* header and navigation*/
 .site-header {
     display: grid;
     grid-template-columns: 190px auto 100px;
@@ -156,7 +155,7 @@ p {
     display: none;
 }
 
-/* -------------------- PAGE MANAGEMENT -------------------- */
+/* page management */
 .page {
     display: none;
     width: auto;
@@ -191,7 +190,7 @@ p {
     text-transform: uppercase;
 }
 
-/* -------------------- HOME PAGE -------------------- */
+/* home page */
 .hero {
     display: grid;
     grid-template-columns: auto auto;
@@ -437,7 +436,7 @@ p {
     font-size: 13px;
 }
 
-/* -------------------- SHARED PAGE HEADING -------------------- */
+/* shared page heading */
 .page-heading {
     display: grid;
     grid-template-columns: auto auto;
@@ -456,7 +455,7 @@ p {
     color: slategray;
 }
 
-/* -------------------- BENEFITS PAGE -------------------- */
+/* benefits page */
 .ingredient-layout {
     display: grid;
     grid-template-columns: auto auto;
@@ -652,7 +651,7 @@ p {
     font-weight: bold;
 }
 
-/* -------------------- REGULATIONS PAGE -------------------- */
+/* regulations page*/
 .journey-layout {
     display: grid;
     grid-template-columns: auto auto;
@@ -889,7 +888,7 @@ p {
     background-color: gold;
 }
 
-/* -------------------- BASIC KNOWLEDGE QUIZ -------------------- */
+/* quiz */
 .quiz-shell {
     max-width: 900px;
     margin: 0 auto;
@@ -1002,7 +1001,7 @@ p {
     border: 1px solid lightgray;
 }
 
-/* -------------------- RETURN RIGHT MINI-GAME -------------------- */
+/* minigame */
 .mini-game-shell {
     max-width: 980px;
     margin: 0 auto;
@@ -1071,7 +1070,7 @@ p {
     background-color: lightsalmon;
 }
 
-/* -------------------- MOBILE LAYOUT: 800PX BREAKPOINT -------------------- */
+/* mobile layout */
 @media (max-width: 800px) {
     h1 {
         font-size: 45px;
